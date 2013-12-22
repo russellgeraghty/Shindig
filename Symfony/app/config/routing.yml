@@ -1,0 +1,4 @@
+rosesareblue_jenkins:
+    resource: "@RosesareblueJenkinsBundle/Resources/config/routing.yml"
+    prefix:   /
+
