@@ -3,8 +3,39 @@
 {% block title %}Configure Jenkins Monitor{% endblock %}
 
 {% block body %}
-<div class="tile quadro quadro-vertical">
-    {{ form(form) }}
-    </div>
+<div>
+    <div class="gutter bg-steel">
+        {{ form_start(form) }}
+            {{ form_errors(form) }}
+            <fieldset>
+                <legend>Jenkins Server Details</legend>
+            {{ form_label(form.buildName) }}
+                <div class="input-control text">
+                {{ form_errors(form.buildName) }}
+                {{ form_widget(form.buildName) }}
+                    </div>
+
+
+        {{ form_label(form.refresh) }}
+                    <div class="input-control text">
+        {{ form_errors(form.refresh) }}
+        {{ form_widget(form.refresh) }}
+                        </div>
+
+        {{ form_label(form.buildUrl) }}
+                        <div class="input-control text">
+        {{ form_errors(form.buildUrl) }}
+        {{ form_widget(form.buildUrl) }}
+                            </div>
+
+                            <div>
+        {{ form_widget(form.save) }}
+                                </div>
+                            </fieldset>
+{{ form_end(form) }}
+
+
+                        </div>
+                    </div>
 {% endblock %}
 

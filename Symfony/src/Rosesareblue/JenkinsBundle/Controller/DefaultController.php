@@ -17,9 +17,9 @@ class DefaultController extends Controller {
         $build = new BuildForm();
 
         $form = $this->createFormBuilder($build)
-                ->add('buildName', 'text')
-                ->add('refresh', 'integer')
-                ->add('buildUrl', 'url')
+                ->add('buildName', 'text', array('label' => 'Build name, including customer and project'))
+                ->add('refresh', 'integer', array('label' => 'Refresh Interval', 'data' => '60'))
+                ->add('buildUrl', 'url', array('label' => 'Jenkins Build URL'))
                 ->add('save', 'submit')
                 ->getForm();
 

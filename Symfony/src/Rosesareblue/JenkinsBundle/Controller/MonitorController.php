@@ -15,7 +15,7 @@ class MonitorController extends Controller {
         // Check the types
         if (is_numeric($refresh) && $this->isValidURL($theUrl)) {
             $params = array();
-            $params['url'] = $theUrl;
+            $params['url'] = $theUrl . '/lastBuild/api/json';
             $params['refresh'] = $refresh;
             $params['buildName'] = $theBuildName;
             $response = $this->render('RosesareblueJenkinsBundle:Default:monitor.xml.twig', $params);
