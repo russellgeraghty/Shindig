@@ -4,35 +4,38 @@
 
 {% block body %}
 <div>
-    <div class="gutter bg-steel">
+    <div class="gutter bg-lightBlue">
         {{ form_start(form) }}
             {{ form_errors(form) }}
             <fieldset>
                 <legend>Jenkins Server Details</legend>
-            {{ form_label(form.buildName) }}
-                <div class="input-control text">
+                {{ form_label(form.buildName) }}
                 {{ form_errors(form.buildName) }}
+                <div class="input-control text">
                 {{ form_widget(form.buildName) }}
                     </div>
+                    <p>For example Lloyds Arena Release 3.5</p>
 
 
-        {{ form_label(form.refresh) }}
+                    {{ form_label(form.refresh) }}
+                    {{ form_errors(form.refresh) }}
                     <div class="input-control text">
-        {{ form_errors(form.refresh) }}
-        {{ form_widget(form.refresh) }}
+                    {{ form_widget(form.refresh) }}
                         </div>
+                        <p>How often the build should be polled for update. Range from 60s to 3600s.</p>
 
-        {{ form_label(form.buildUrl) }}
+                        {{ form_label(form.buildUrl) }}
+                        {{ form_errors(form.buildUrl) }}
                         <div class="input-control text">
-        {{ form_errors(form.buildUrl) }}
-        {{ form_widget(form.buildUrl) }}
+                        {{ form_widget(form.buildUrl) }}
                             </div>
+                            <p>The base URL of the build. For example http://gozer.bjss.co.uk:8080/job/ePortal-P2-Main/</p>
 
                             <div>
-        {{ form_widget(form.save) }}
+                            {{ form_widget(form.save) }}
                                 </div>
                             </fieldset>
-{{ form_end(form) }}
+                {{ form_end(form) }}
 
 
                         </div>
