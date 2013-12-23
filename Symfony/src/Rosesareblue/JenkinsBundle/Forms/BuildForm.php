@@ -9,8 +9,17 @@ namespace Rosesareblue\JenkinsBundle\Forms;
  */
 class BuildForm {
 
+    protected $buildName;
     protected $refresh;
     protected $buildUrl;
+
+    public function getBuildName() {
+        return $this->buildName;
+    }
+
+    public function setBuildName($buildName) {
+        $this->buildName = $buildName;
+    }
 
     public function getRefresh() {
         return $this->refresh;

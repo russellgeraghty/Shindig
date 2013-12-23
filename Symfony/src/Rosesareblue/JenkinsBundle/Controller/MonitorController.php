@@ -4,27 +4,30 @@ namespace Rosesareblue\JenkinsBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class DefaultController extends Controller {
+class MonitorController extends Controller {
 
-    public function indexAction($url, $refresh) {
+    public function indexAction($url, $refresh, $buildName) {
 
         $response = false;
+        $theUrl = urldecode($url);
+        $theBuildName = urldecode($buildName);
 
         // Check the types
-        if (is_int($refresh) && $this->isValidURL($url)) {
+        if (is_numeric($refresh) && $this->isValidURL($theUrl)) {
             $params = array();
-            $params['url'] = $url;
+            $params['url'] = $theUrl;
             $params['refresh'] = $refresh;
+            $params['buildName'] = $theBuildName;
             $response = $this->render('RosesareblueJenkinsBundle:Default:monitor.xml.twig', $params);
             $response->headers->set('Content-Type', 'application/xml');
         } else {
             $errors = array();
-            if (!$this->isValidURL($url)) {
-                $errors[] = "The first paramter must be the address of the build server";
+            if (!$this->isValidURL($theUrl)) {
+                $errors[] = "The first parameter must be the address of the build server. Received |$theUrl|";
             }
 
-            if (!is_int($refresh)) {
-                $errors[] = "The second paramter must be a number";
+            if (!is_numeric($refresh)) {
+                $errors[] = "The second parameter must be a number. Received |$refresh|";
             }
 
             $params = array();
@@ -42,8 +45,7 @@ class DefaultController extends Controller {
      * @return Boolean True if valid.
      */
     function isValidURL($url) {
-        return preg_match('|^http(s)?://[a-z0-9-]+(.[a-z0-9-]+)*
-        (:[0-9]+)?(/.*)?$|i', $url);
+        return preg_match('|^http(s)?://[a-z0-9-]+(.[a-z0-9-]+)*(:[0-9]+)?(/.*)?$|i', $url);
     }
 
 }

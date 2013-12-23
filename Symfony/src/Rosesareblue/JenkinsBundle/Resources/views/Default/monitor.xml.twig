@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Module>
     <ModulePrefs
-        title="Build Monitor"
+        title="{{buildName}}"
         author_email="russell.geraghty@bjss.com"
         description="Build status monitor.">
         <Require feature="opensocial-0.8" />
@@ -13,8 +13,6 @@
         <script src="/gadgets/proxy?url=http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
         <script type="text/javascript">
-
-            // Change these
             var g_url = "{{url}}";
             var g_timeout = {{refresh}};
 

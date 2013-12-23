@@ -3,5 +3,5 @@ rosesareblue_jenkins_homepage:
     defaults: { _controller: RosesareblueJenkinsBundle:Default:index }
 
 rosesareblue_jenkins_monitor:
-    pattern: /jenkins/{url}/{refresh}
+    pattern: /jenkins/{url}/{refresh}/{buildName}
     defaults: { _controller: RosesareblueJenkinsBundle:Monitor:index }

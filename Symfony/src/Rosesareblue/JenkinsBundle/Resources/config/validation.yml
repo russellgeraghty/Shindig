@@ -1,0 +1,11 @@
+## YAML Template.
+---
+Rosesareblue\JenkinsBundle\Forms\BuildForm:
+    properties:
+        buildName:
+          - NotBlank: ~
+        refresh:
+          - NotBlank: ~
+          - Type: integer
+        buildUrl:
+          - Url: ~
