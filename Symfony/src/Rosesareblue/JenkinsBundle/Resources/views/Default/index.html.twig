@@ -10,35 +10,41 @@
             <fieldset>
                 <legend>Jenkins Server Details</legend>
                 {{ form_label(form.buildName) }}
+                <div class="text-warning">
                 {{ form_errors(form.buildName) }}
-                <div class="input-control text">
-                {{ form_widget(form.buildName) }}
                     </div>
-                    <p>For example Lloyds Arena Release 3.5</p>
+                    <div class="input-control text">
+                {{ form_widget(form.buildName) }}
+                        </div>
+                        <p>For example Lloyds Arena Release 3.5</p>
 
 
                     {{ form_label(form.refresh) }}
+                        <div class="text-warning">
                     {{ form_errors(form.refresh) }}
-                    <div class="input-control text">
+                            </div>
+                            <div class="input-control text">
                     {{ form_widget(form.refresh) }}
-                        </div>
-                        <p>How often the build should be polled for update. Range from 60s to 3600s.</p>
+                                </div>
+                                <p>How often the build should be polled for update. Range from 60s to 3600s.</p>
 
                         {{ form_label(form.buildUrl) }}
+                                <div class="text-warning">
                         {{ form_errors(form.buildUrl) }}
-                        <div class="input-control text">
+                                    </div>
+                                    <div class="input-control text">
                         {{ form_widget(form.buildUrl) }}
-                            </div>
-                            <p>The base URL of the build. For example http://gozer.bjss.co.uk:8080/job/ePortal-P2-Main/</p>
+                                        </div>
+                                        <p>The base URL of the build. For example http://gozer.bjss.co.uk:8080/job/ePortal-P2-Main/</p>
 
-                            <div>
+                                        <div>
                             {{ form_widget(form.save) }}
-                                </div>
-                            </fieldset>
+                                            </div>
+                                        </fieldset>
                 {{ form_end(form) }}
 
 
-                        </div>
-                    </div>
+                                    </div>
+                                </div>
 {% endblock %}
 
