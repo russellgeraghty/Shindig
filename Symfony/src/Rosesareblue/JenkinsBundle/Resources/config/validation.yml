@@ -5,7 +5,7 @@ Rosesareblue\JenkinsBundle\Forms\BuildForm:
         buildName:
           - NotBlank: ~
           - Regex:
-              pattern: "/(\w+\s){2,}\w+[.?!]/u"
+              pattern: "/(\w+\s){2,}\w+/u"
               message: "Please include the Customer, Project and Build name in the title"
         refresh:
           - NotBlank: ~

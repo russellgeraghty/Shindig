@@ -15,21 +15,25 @@
                 }
             </style>
 
-            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+            <style type="text/css">
+            {% block localstyles %}{% endblock %}
+                </style>
+
+                <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
         {% javascripts '@RosesareblueJenkinsBundle/Resources/public/js/*' %}
-            <script type="text/javascript" src="{{ asset_url }}"></script>
+                <script type="text/javascript" src="{{ asset_url }}"></script>
         {% endjavascripts %}
 
-            <title>{% block title %}{% endblock %}</title>
+                <title>{% block title %}{% endblock %}</title>
 
-            <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-        </head>
-        <body class="metro">
-            <div class="page container">
-                <h1 class="fg-dark">{{ block('title') }}</h1>
+                <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+            </head>
+            <body class="metro">
+                <div class="page container">
+                    <h1 class="fg-dark">{{ block('title') }}</h1>
         {% block body %}{% endblock %}
-            </div>
+                </div>
         {% block javascripts %}{% endblock %}
-        </body>
-    </html>
+            </body>
+        </html>

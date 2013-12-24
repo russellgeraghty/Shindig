@@ -31,7 +31,7 @@ class DefaultController extends Controller {
             $urlParams = array();
             $urlParams['url'] = urlencode($data->getBuildUrl());
             $urlParams['refresh'] = $data->getRefresh();
-            $urlParams['buildName'] = $data->getBuildName();
+            $urlParams['buildName'] = urlencode($data->getBuildName());
             $params['url'] = $this->generateUrl('rosesareblue_jenkins_monitor', $urlParams);
 
             return $this->render('RosesareblueJenkinsBundle:Default:dashboard-url.html.twig', $params);
