@@ -1,0 +1,26 @@
+{% extends 'RosesareblueJenkinsBundle::base.html.twig' %}
+
+{% block title %}Congratulations!{% endblock %}
+
+{% block localstyles %}
+.metro a, .metro .link {
+color: white;
+}
+{% endblock %}
+
+{% block body %}
+<div>
+    <p>You've successfully configured your Jenkins Monitor</p>
+    <div class="gutter bg-lightBlue">
+        <p>To have this plugin added to JIRA please
+            <a href="mailto:russell.geraghty@bjss.com?subject=Add a new JIRA Gadget&body=Please add a new JIRA gadget using this URL: {{app.request.scheme ~'://' ~ app.request.httpHost ~ url |url_encode()}}">email Jira Admins</a> with the details.
+        </p>
+        <p>
+            If you'd like to use this gadget in another <a href="http://opensocial.org/">OpenSocial</a> container here are the details:
+            <br />
+            <a href="{{app.request.scheme ~'://' ~ app.request.httpHost ~ url}}">{{app.request.scheme ~'://' ~ app.request.httpHost ~url}}</a>
+        </p>
+
+    </div>
+</div>
+{% endblock %}

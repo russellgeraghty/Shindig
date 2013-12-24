@@ -1,0 +1,8 @@
+.metro .gutter {
+    background-color: #FDFDFD !important;
+    border: 1px solid #CCCCCC;
+    margin: 0 0 10px;
+    min-height: 100px;
+    padding: 20px 40px 20px 60px;
+    position: relative;
+}

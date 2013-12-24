@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+
+        {% stylesheets '@RosesareblueJenkinsBundle/Resources/public/css/*' filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+
+        <style type="text/css">
+                .metro .page {
+                    margin: 0 auto;
+                    padding: 0 20px;
+                    width: 980px;
+                }
+            </style>
+
+            <style type="text/css">
+            {% block localstyles %}{% endblock %}
+                </style>
+
+                <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+        {% javascripts '@RosesareblueJenkinsBundle/Resources/public/js/*' %}
+                <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+
+                <title>{% block title %}{% endblock %}</title>
+
+                <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+            </head>
+            <body class="metro">
+                <div class="page container">
+                    <h1 class="fg-dark">{{ block('title') }}</h1>
+        {% block body %}{% endblock %}
+                </div>
+        {% block javascripts %}{% endblock %}
+            </body>
+        </html>

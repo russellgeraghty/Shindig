@@ -1,0 +1,19 @@
+## YAML Template.
+---
+Rosesareblue\JenkinsBundle\Forms\BuildForm:
+    properties:
+        buildName:
+          - NotBlank: ~
+          - Regex:
+              pattern: "/(\w+\s){2,}\w+/u"
+              message: "Please include the Customer, Project and Build name in the title"
+        refresh:
+          - NotBlank: ~
+          - Type: integer
+          - Range:
+              min: 60
+              max: 3600
+              minMessage: Refresh cannot be faster than once per minute
+              maxMessage: Refresh rates greater than once per hour will have no effect.
+        buildUrl:
+          - Url: ~
